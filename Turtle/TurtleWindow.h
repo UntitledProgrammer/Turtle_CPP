@@ -26,6 +26,7 @@ namespace np
 		//Methods:
 		void Begin();
 		void End();
+		void SetScale(unsigned int width, unsigned int height);
 
 		//Friends:
 		friend class Turtle;

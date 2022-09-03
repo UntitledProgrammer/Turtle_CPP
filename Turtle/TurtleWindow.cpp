@@ -32,3 +32,8 @@ void np::TurtleWindow::End()
 		SDL_RenderPresent(renderer);
 	}
 }
+
+void np::TurtleWindow::SetScale(unsigned int width, unsigned int height)
+{
+	SDL_RenderSetScale(renderer, width, height);
+}

@@ -22,18 +22,22 @@ static void DrawA(np::Turtle* turtle, unsigned int size)
 
 int main(int argc, char* argv[])
 {
-	np::TurtleWindow window = np::TurtleWindow("My Turtle", 640, 480);
+	np::TurtleWindow window = np::TurtleWindow("My Turtle", 800, 800);
+	window.SetScale(4, 4);
 	np::Turtle turtle = np::Turtle(&window);
 	window.Begin();
 	turtle.SetColour(COLOUR_RED);
 
-	turtle.Translate(glm::vec3(150, 150,0));
-	DrawA(&turtle, 100);
+	turtle.Translate(glm::vec3(50, 10,0));
+	DrawA(&turtle, 80);
 	turtle.SetRotation(0);
-	turtle.Translate(glm::vec3(240, 150, 0));
-	DrawL(&turtle, 100);
+	turtle.Translate(glm::vec3(100, 10, 0));
+	DrawL(&turtle, 75);
+
+	turtle.Translate(glm::vec3(19, 95, 0));
+	turtle.SetRotation(270);
+	turtle.Forward(122);
 
 	window.End();
-	SDL_Delay(10000);
 	return 0;
 }
