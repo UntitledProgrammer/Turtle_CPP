@@ -1,8 +1,7 @@
 #pragma once
 //Includes:
 #include<glm/glm.hpp>
-#include<glm/ext/matrix_common.hpp>
-#include<glm/ext/matrix_transform.hpp>
+#include<glm/gtx/transform.hpp>
 
 #ifndef TRANSFORM_H
 #define TRANSFORM_H

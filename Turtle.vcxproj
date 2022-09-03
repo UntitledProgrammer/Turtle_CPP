@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Turtle\Transform.cpp" />
     <ClCompile Include="Turtle\Colour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Turtle\TurtleWindow.cpp" />
     <ClCompile Include="Turtle\Turtle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Turtle\Transform.h" />
     <ClInclude Include="Turtle\Colour.h" />
     <ClInclude Include="Turtle\TurtleWindow.h" />
     <ClInclude Include="Turtle\ThirdParties\SDL2\include\begin_code.h" />
@@ -117,9 +119,6 @@
     <ClInclude Include="Turtle\ThirdParties\SDL2\include\SDL_vulkan.h" />
     <ClInclude Include="Turtle\Turtle.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -174,7 +173,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\tomja\Documents\Projects\Turtle\Turtle\Turtle\ThirdParties\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\tomja\Documents\Projects\Turtle\Turtle\Turtle\ThirdParties\SDL2\include;C:\Users\tomja\Documents\Projects\Turtle\Turtle\Turtle\ThirdParties\Math;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\tomja\Documents\Projects\Turtle\Turtle\Turtle\ThirdParties\SDL2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -245,13 +244,5 @@
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\glm.0.9.9.800\build\native\glm.targets" Condition="Exists('..\packages\glm.0.9.9.800\build\native\glm.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\glm.0.9.9.800\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glm.0.9.9.800\build\native\glm.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
