@@ -3,32 +3,37 @@
 //Constructors:
 np::Turtle::Turtle(unsigned int width, unsigned int height) : window(new TurtleWindow("Turtle", width, height))
 {
-	transform = Mat4u(1);
+	transform = Transform();
 	colour = Colour(0, 255, 0, 0);
 }
 
 np::Turtle::Turtle(TurtleWindow* window) : window(window)
 {
-	transform = Mat4u(1);
+	transform = Transform();
 	colour = Colour(0, 255, 0, 0);
 }
 
 void np::Turtle::Translate(glm::vec3 translation)
 {
-	transform = glm::translate(transform, translation);
+	transform.translation = translation;
 }
 
 void np::Turtle::Rotate(glm::float32 degrees)
 {
-	transform = glm::rotate(transform, glm::radians(degrees), glm::vec3(0,0,1));
+	transform.rotation += WORLD_FORWARD * glm::radians(degrees);
+}
+
+void np::Turtle::SetRotation(glm::float32 degrees)
+{
+	transform.rotation = WORLD_FORWARD * glm::radians(degrees);
 }
 
 void np::Turtle::Forward(unsigned int steps)
 {
 	//Calculate start and end position.
-	Vec3u p1= GetPosition();
-	transform = glm::translate(transform, Vec3u(0, steps, 0));
-	Vec3u p2 = GetPosition();
+	glm::vec3 p1 = transform.GetMatrix()[3];
+	glm::vec3 p2 = glm::translate(transform.GetMatrix(), WORLD_UP * (float)steps)[3]; //Translate relative to local rotation.
+	transform.translation = p2;
 
 	//Draw line from the start point to the end point.
 	SDL_SetRenderDrawColor(window->renderer, colour.GetRed(), colour.GetGreen(), colour.GetBlue(), SDL_ALPHA_OPAQUE);
@@ -38,9 +43,9 @@ void np::Turtle::Forward(unsigned int steps)
 void np::Turtle::Backward(unsigned int steps)
 {
 	//Calculate start and end position.
-	Vec3u p1 = GetPosition();
-	transform = glm::translate(transform, Vec3u(0, -(int)steps, 0));
-	Vec3u p2 = GetPosition();
+	glm::vec3 p1 = transform.GetMatrix()[3];
+	glm::vec3 p2 = glm::translate(transform.GetMatrix(), WORLD_UP * -(float)steps)[3];
+	transform.translation = p2;
 
 	//Draw line from the start point to the end point.
 	SDL_SetRenderDrawColor(window->renderer, colour.GetRed(), colour.GetGreen(), colour.GetBlue(), SDL_ALPHA_OPAQUE);
@@ -55,5 +60,5 @@ void np::Turtle::SetColour(Colour colour)
 
 np::Vec3u np::Turtle::GetPosition()
 {
-	return transform[3];
+	return glm::vec3(0);
 }

@@ -8,7 +8,7 @@
 
 class Transform
 {
-protected:
+public:
 	//Attributes:
 	glm::vec3 translation;
 	glm::vec3 rotation;

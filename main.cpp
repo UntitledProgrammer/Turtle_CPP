@@ -2,10 +2,10 @@
 
 static void DrawL(np::Turtle* turtle, unsigned int size)
 {
-	turtle->Rotate(90);
-	turtle->Forward(size / 2);
-	turtle->Rotate(90);
+	turtle->SetRotation(0);
 	turtle->Forward(size);
+	turtle->Rotate(270);
+	turtle->Forward(size/2);
 }
 
 static void DrawA(np::Turtle* turtle, unsigned int size)
@@ -27,10 +27,10 @@ int main(int argc, char* argv[])
 	window.Begin();
 	turtle.SetColour(COLOUR_RED);
 
-	turtle.Translate(glm::vec3(200, 200,0));
+	turtle.Translate(glm::vec3(150, 150,0));
 	DrawA(&turtle, 100);
-	turtle.Rotate(270);
-	turtle.Translate(glm::vec3(150, 50, 0));
+	turtle.SetRotation(0);
+	turtle.Translate(glm::vec3(240, 150, 0));
 	DrawL(&turtle, 100);
 
 	window.End();
