@@ -27,18 +27,18 @@ void np::Turtle::Translate(glm::vec3 translation)
 	DrawLine(p1, transform.GetMatrix()[POSITION_COLUMN]);
 }
 
-void np::Turtle::Rotate(glm::float32 degrees){ transform.rotation += WORLD_FORWARD * glm::radians(degrees); }
+void np::Turtle::Rotate(glm::float32 degrees){ transform.rotation += Transform::depth * glm::radians(degrees); }
 
-void np::Turtle::SetRotation(glm::float32 degrees){ transform.rotation = WORLD_FORWARD * glm::radians(degrees); }
+void np::Turtle::SetRotation(glm::float32 degrees){ transform.rotation = Transform::depth * glm::radians(degrees); }
 
 void np::Turtle::Forward(unsigned int steps)
 {
-	DrawLine(TranslateDirection(WORLD_UP, steps), transform.GetMatrix()[POSITION_COLUMN]);
+	DrawLine(TranslateDirection(Transform::vertical, steps), transform.GetMatrix()[POSITION_COLUMN]);
 }
 
 void np::Turtle::Backward(unsigned int steps)
 {
-	DrawLine(TranslateDirection(WORLD_UP * -1.0f, steps), transform.GetMatrix()[POSITION_COLUMN]);
+	DrawLine(TranslateDirection(Transform::vertical * -1.0f, steps), transform.GetMatrix()[POSITION_COLUMN]);
 }
 
 

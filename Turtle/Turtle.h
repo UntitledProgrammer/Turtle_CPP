@@ -11,11 +11,6 @@
 
 namespace np
 {
-	//Typedefs:
-	typedef glm::vec<2, glm::float32> Vec2u;
-	typedef glm::vec<3, glm::float32> Vec3u;
-	typedef glm::mat<4, 4, glm::float32> Mat4u;
-
 	class Turtle
 	{
 	private:
@@ -23,7 +18,6 @@ namespace np
 		TurtleWindow* window;
 		Transform transform;
 		Colour colour;
-		const glm::vec3 WORLD_FORWARD = glm::vec3(0, 0, 1), WORLD_UP = glm::vec3(0,1,0);
 		bool active = true;
 
 
