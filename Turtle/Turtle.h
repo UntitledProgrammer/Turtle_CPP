@@ -20,7 +20,6 @@ namespace np
 		Colour colour;
 		bool active = true;
 
-
 	public:
 		//Constructors:
 		Turtle(unsigned int width, unsigned int height);
@@ -29,12 +28,12 @@ namespace np
 		//Properties:
 		glm::vec3 GetPosition();
 		void SetColour(Colour colour);
-		void SetRotation(glm::float32 degrees);
+		void SetRotation(glm::float32 eulerAngle);
 
 		//Methods:
 		void Teleport(glm::vec3 translation);
 		void Translate(glm::vec3 translation);
-		void Rotate(glm::float32 degrees);
+		void Rotate(glm::float32 eulerAngle);
 		void Forward(unsigned int steps);
 		void Backward(unsigned int steps);
 		void PenUp();
@@ -46,10 +45,10 @@ namespace np
 		glm::vec3 TranslateDirection(glm::vec3 direction, float steps);
 	};
 
-	#define UP_EULER_ANGLES 180.0f
-	#define DOWN_EULER_ANGLES 0.0f
-	#define RIGHT_EULER_ANGLES 270.0f
-	#define LEFT_EULER_ANGLES 90.0f
+	constexpr float UP_EULER_ANGLES = 180.0f;
+	constexpr float DOWN_EULER_ANGLES = 0.0f;
+	constexpr float RIGHT_EULER_ANGLES = 270.0f;
+	constexpr float LEFT_EULER_ANGLES = 90.0f;
 }
 
 #endif // !TURTLE_H

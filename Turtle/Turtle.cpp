@@ -27,9 +27,9 @@ void np::Turtle::Translate(glm::vec3 translation)
 	DrawLine(p1, transform.GetMatrix()[POSITION_COLUMN]);
 }
 
-void np::Turtle::Rotate(glm::float32 degrees){ transform.rotation += Transform::depth * glm::radians(degrees); }
+void np::Turtle::Rotate(glm::float32 eulerAngle){ transform.rotation += Transform::depth * glm::radians(eulerAngle); }
 
-void np::Turtle::SetRotation(glm::float32 degrees){ transform.rotation = Transform::depth * glm::radians(degrees); }
+void np::Turtle::SetRotation(glm::float32 eulerAngle){ transform.rotation = Transform::depth * glm::radians(eulerAngle); }
 
 void np::Turtle::Forward(unsigned int steps)
 {

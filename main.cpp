@@ -2,12 +2,12 @@
 
 static void Six(np::Turtle* turtle, float size)
 {
-	turtle->SetRotation(RIGHT_EULER_ANGLES);
+	turtle->SetRotation(np::RIGHT_EULER_ANGLES);
 	turtle->Forward(size/2);
 	turtle->Backward(size/2);
-	turtle->SetRotation(DOWN_EULER_ANGLES);
+	turtle->SetRotation(np::DOWN_EULER_ANGLES);
 	turtle->Forward(size);
-	turtle->SetRotation(RIGHT_EULER_ANGLES);
+	turtle->SetRotation(np::RIGHT_EULER_ANGLES);
 	turtle->Forward(size/2);
 	turtle->Rotate(270);
 	turtle->Forward(size/2);
@@ -17,16 +17,16 @@ static void Six(np::Turtle* turtle, float size)
 
 static void Seven(np::Turtle* turtle, float size)
 {
-	turtle->SetRotation(LEFT_EULER_ANGLES);
+	turtle->SetRotation(np::LEFT_EULER_ANGLES);
 	turtle->Backward(size/2);
-	turtle->SetRotation(DOWN_EULER_ANGLES);
+	turtle->SetRotation(np::DOWN_EULER_ANGLES);
 	turtle->Rotate(12.0f);
 	turtle->Forward(size + size * 0.05f);
 }
 
 void One(np::Turtle* turtle, float size)
 {
-	turtle->SetRotation(DOWN_EULER_ANGLES);
+	turtle->SetRotation(np::DOWN_EULER_ANGLES);
 	turtle->Forward(size);
 }
 
@@ -36,7 +36,7 @@ void Four(np::Turtle* turtle, float size)
 	float width = size * 0.5f;
 
 	turtle->PenUp();
-	turtle->SetRotation(DOWN_EULER_ANGLES);
+	turtle->SetRotation(np::DOWN_EULER_ANGLES);
 	turtle->Forward(size/2); //Middle.
 	turtle->PenDown();
 	turtle->Rotate(90);
@@ -51,7 +51,7 @@ void Four(np::Turtle* turtle, float size)
 	turtle->Rotate(90);
 	turtle->Forward(size / 2);
 	turtle->Teleport(pos);
-	turtle->SetRotation(UP_EULER_ANGLES + 30.0f);
+	turtle->SetRotation(np::UP_EULER_ANGLES + 30.0f);
 	turtle->Forward(width + width * 0.1f);
 }
 
