@@ -42,6 +42,11 @@ namespace np
 		void Backward(unsigned int steps);
 		void SetColour(Colour colour);
 	};
+
+	#define UP_EULER_ANGLES 180.0f
+	#define DOWN_EULER_ANGLES 0.0f
+	#define RIGHT_EULER_ANGLES 270.0f
+	#define LEFT_EULER_ANGLES 90.0f
 }
 
 #endif // !TURTLE_H

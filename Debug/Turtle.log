@@ -1,2 +1,20 @@
 ﻿  main.cpp
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(6,22): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(7,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(9,18): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(11,22): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(13,22): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(15,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(21,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(24,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(30,18): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(36,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(38,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(40,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(41,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(43,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(45,24): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(46,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(48,23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\tomja\Documents\Projects\Turtle\Turtle\main.cpp(50,25): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   Turtle.vcxproj -> C:\Users\tomja\Documents\Projects\Turtle\Debug\Turtle.exe
