@@ -32,22 +32,27 @@ void One(np::Turtle* turtle, float size)
 
 void Four(np::Turtle* turtle, float size)
 {
+	glm::vec3 start = turtle->GetPosition();
+	float width = size * 0.5f;
+
+	turtle->PenUp();
 	turtle->SetRotation(DOWN_EULER_ANGLES);
-	turtle->Forward(size /2);
+	turtle->Forward(size/2); //Middle.
+	turtle->PenDown();
 	turtle->Rotate(90);
-	turtle->Backward(size/4);
-	turtle->SetRotation(UP_EULER_ANGLES);
-	turtle->Forward(size / 2);
-	turtle->Backward(size / 2);
+	glm::vec3 pos = turtle->GetPosition();
+	turtle->Backward(width * 0.8f);
 	turtle->Rotate(90);
-	turtle->Backward(size / 8);
-	turtle->SetRotation(UP_EULER_ANGLES);
-	turtle->Backward(size / 2);
+	turtle->Forward(size * 0.20f);
+	turtle->Backward(size * 0.20f);
+	turtle->Rotate(90);
+	turtle->Forward(width * 0.2f);
+	turtle->Backward(width * 0.2f);
+	turtle->Rotate(90);
 	turtle->Forward(size / 2);
-	turtle->SetRotation(LEFT_EULER_ANGLES);
-	turtle->Forward(size / 4);
-	turtle->Rotate(120);
-	turtle->Forward(size/2 + size/4);
+	turtle->Teleport(pos);
+	turtle->SetRotation(UP_EULER_ANGLES + 30.0f);
+	turtle->Forward(width + width * 0.1f);
 }
 
 int main(int argc, char* argv[])
@@ -60,22 +65,21 @@ int main(int argc, char* argv[])
 	//Window. (200,200);
 	window.Begin();
 
-
-	turtle.Translate(glm::vec3(10, 10, 0));
+	turtle.Teleport(glm::vec3(10, 10, 0));
 	float size = 60.0f;
 
 
 	//116.
 	One(&turtle, size);
-	turtle.Translate(glm::vec3(20, 10, 0));
+	turtle.Teleport(glm::vec3(20, 10, 0));
 	One(&turtle, size);
-	turtle.Translate(glm::vec3(30, 10, 0));
+	turtle.Teleport(glm::vec3(30, 10, 0));
 	Six(&turtle, size);
 
 	//74.
-	turtle.Translate(glm::vec3(100, 100, 0));
+	turtle.Teleport(glm::vec3(100, 100, 0));
 	Seven(&turtle, size);
-	turtle.Translate(glm::vec3(150, 100, 0));
+	turtle.Teleport(glm::vec3(150, 100, 0));
 	Four(&turtle, size);
 
 	window.End();

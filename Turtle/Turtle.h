@@ -24,6 +24,7 @@ namespace np
 		Transform transform;
 		Colour colour;
 		const glm::vec3 WORLD_FORWARD = glm::vec3(0, 0, 1), WORLD_UP = glm::vec3(0,1,0);
+		bool active = true;
 
 
 	public:
@@ -32,15 +33,23 @@ namespace np
 		Turtle(TurtleWindow* window);
 
 		//Properties:
-		Vec3u GetPosition();
+		glm::vec3 GetPosition();
+		void SetColour(Colour colour);
+		void SetRotation(glm::float32 degrees);
 
 		//Methods:
+		void Teleport(glm::vec3 translation);
 		void Translate(glm::vec3 translation);
 		void Rotate(glm::float32 degrees);
-		void SetRotation(glm::float32 degrees);
 		void Forward(unsigned int steps);
 		void Backward(unsigned int steps);
-		void SetColour(Colour colour);
+		void PenUp();
+		void PenDown();
+
+	protected:
+		//Protected methods:
+		void DrawLine(glm::vec3 a, glm::vec3 b);
+		glm::vec3 TranslateDirection(glm::vec3 direction, float steps);
 	};
 
 	#define UP_EULER_ANGLES 180.0f
