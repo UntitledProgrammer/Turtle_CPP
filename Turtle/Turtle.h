@@ -16,11 +16,12 @@ namespace np
 	private:
 		//Attributes:
 		TurtleWindow* window;
-		Transform transform;
 		Colour colour;
 		bool active = true;
 
 	public:
+		Transform transform;
+
 		//Constructors:
 		Turtle(unsigned int width, unsigned int height);
 		Turtle(TurtleWindow* window);

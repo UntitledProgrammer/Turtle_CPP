@@ -1,8 +1,10 @@
 ﻿#include "Turtle/Turtle.h"
+#include<iostream>
 
 static void Six(np::Turtle* turtle, float size)
 {
 	turtle->SetRotation(np::RIGHT_EULER_ANGLES);
+	std::cout << turtle->transform.LocaliseDirection(glm::vec3(1, 0, 0)).y << std::endl;
 	turtle->Forward(size/2);
 	turtle->Backward(size/2);
 	turtle->SetRotation(np::DOWN_EULER_ANGLES);
