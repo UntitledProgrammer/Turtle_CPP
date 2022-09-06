@@ -5,7 +5,7 @@
 >**Concepts & Usage**  
 > You can think of the rendering window as a 2D graph and canvas that outlines the area where the turtle can draw. The rendering window uses a traditional format that places the point of origin (0,0) in the top left corner.  
 >
->`Turtle::Forward(unsigned int steps)`
+>`Turtle::Forward(unsigned int steps)`  
 >Moves the turtle along its localised vertical axis according to the number of steps (pixels) specified.  
 >
 >`Turtle::Backward(unsigned int steps)`  
