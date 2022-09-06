@@ -27,7 +27,8 @@ public:
 	glm::mat4 GetMatrix();
 	glm::vec3 LocaliseDirection(glm::vec3 direction)
 	{
-		return glm::normalize(glm::translate(GetMatrix(), direction)[3] - GetMatrix()[3]);
+		glm::vec3 head = glm::vec3(glm::cos(rotation.z), glm::sin(rotation.z), 0);
+		return glm::normalize(glm::translate(GetMatrix(), head)[3]);
 	}
 };
 
