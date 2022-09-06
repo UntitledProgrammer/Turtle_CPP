@@ -30,6 +30,9 @@
     <ClCompile Include="Turtle\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Turtle\Transform2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Turtle\ThirdParties\SDL2\include\begin_code.h">
@@ -306,6 +309,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Turtle\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turtle\Transform2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

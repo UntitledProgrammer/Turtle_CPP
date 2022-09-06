@@ -22,12 +22,14 @@
     <ClCompile Include="Turtle\Transform.cpp" />
     <ClCompile Include="Turtle\Colour.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Turtle\Transform2D.cpp" />
     <ClCompile Include="Turtle\TurtleWindow.cpp" />
     <ClCompile Include="Turtle\Turtle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Turtle\Transform.h" />
     <ClInclude Include="Turtle\Colour.h" />
+    <ClInclude Include="Turtle\Transform2D.h" />
     <ClInclude Include="Turtle\TurtleWindow.h" />
     <ClInclude Include="Turtle\ThirdParties\SDL2\include\begin_code.h" />
     <ClInclude Include="Turtle\ThirdParties\SDL2\include\close_code.h" />

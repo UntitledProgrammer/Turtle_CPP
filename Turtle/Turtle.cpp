@@ -1,44 +1,44 @@
 #include"Turtle.h"
 
-#define POSITION_COLUMN 3
+#define POSITION_COLUMN 2
 
 //Constructors:
 np::Turtle::Turtle(unsigned int width, unsigned int height) : window(new TurtleWindow("Turtle", width, height))
 {
-	transform = Transform();
+	transform = Transform2D();
 	colour = Colour(0, 255, 0, 0);
 }
 
 np::Turtle::Turtle(TurtleWindow* window) : window(window)
 {
-	transform = Transform();
+	transform = Transform2D();
 	colour = Colour(0, 255, 0, 0);
 }
 
-void np::Turtle::Teleport(glm::vec3 translation)
+void np::Turtle::Teleport(glm::vec2 translation)
 {
 	transform.translation = translation;
 }
 
-void np::Turtle::Translate(glm::vec3 translation)
+void np::Turtle::Translate(glm::vec2 translation)
 {
 	glm::vec3 p1 = transform.GetMatrix()[POSITION_COLUMN];
 	transform.translation = translation;
 	DrawLine(p1, transform.GetMatrix()[POSITION_COLUMN]);
 }
 
-void np::Turtle::Rotate(glm::float32 eulerAngle){ transform.rotation += Transform::depth * glm::radians(eulerAngle); }
+void np::Turtle::Rotate(glm::float32 eulerAngle){ transform.rotation += glm::radians(eulerAngle); }
 
-void np::Turtle::SetRotation(glm::float32 eulerAngle){ transform.rotation = Transform::depth * glm::radians(eulerAngle); }
+void np::Turtle::SetRotation(glm::float32 eulerAngle) { transform.SetRotation(eulerAngle); }
 
 void np::Turtle::Forward(unsigned int steps)
 {
-	DrawLine(TranslateDirection(Transform::vertical, steps), transform.GetMatrix()[POSITION_COLUMN]);
+	DrawLine(TranslateDirection(Transform2D::vertical, steps), transform.GetMatrix()[POSITION_COLUMN]);
 }
 
 void np::Turtle::Backward(unsigned int steps)
 {
-	DrawLine(TranslateDirection(Transform::vertical * -1.0f, steps), transform.GetMatrix()[POSITION_COLUMN]);
+	DrawLine(TranslateDirection(Transform2D::vertical * -1.0f, steps), transform.GetMatrix()[POSITION_COLUMN]);
 }
 
 
@@ -49,7 +49,7 @@ glm::vec3 np::Turtle::GetPosition(){ return transform.GetMatrix()[POSITION_COLUM
 void np::Turtle::PenUp() { active = false; }
 void np::Turtle::PenDown() { active = true; }
 
-void np::Turtle::DrawLine(glm::vec3 a, glm::vec3 b)
+void np::Turtle::DrawLine(glm::vec2 a, glm::vec2 b)
 {
 	if (!active) return;
 
@@ -58,11 +58,11 @@ void np::Turtle::DrawLine(glm::vec3 a, glm::vec3 b)
 	SDL_RenderDrawLine(window->renderer, a.x, a.y, b.x, b.y);
 }
 
-glm::vec3 np::Turtle::TranslateDirection(glm::vec3 direction, float steps)
+glm::vec2 np::Turtle::TranslateDirection(glm::vec2 direction, float steps)
 {
 	//Calculate start and end position.
-	glm::vec3 p1 = transform.GetMatrix()[3];
-	glm::vec3 p2 = glm::translate(transform.GetMatrix(), direction * steps)[3];
+	glm::vec2 p1 = transform.GetMatrix()[POSITION_COLUMN];
+	glm::vec2 p2 = glm::translate(transform.GetMatrix(), direction * steps)[POSITION_COLUMN];
 	transform.translation = p2;
 	return p2;
 }

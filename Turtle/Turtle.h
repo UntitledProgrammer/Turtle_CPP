@@ -4,10 +4,8 @@
 
 //Includes:
 #include"TurtleWindow.h"
-#include"Transform.h"
+#include"Transform2D.h"
 #include<vector>
-#include<glm/glm.hpp>
-#include<glm/ext/matrix_transform.hpp>
 
 namespace np
 {
@@ -20,7 +18,7 @@ namespace np
 		bool active = true;
 
 	public:
-		Transform transform;
+		Transform2D transform;
 
 		//Constructors:
 		Turtle(unsigned int width, unsigned int height);
@@ -32,8 +30,8 @@ namespace np
 		void SetRotation(glm::float32 eulerAngle);
 
 		//Methods:
-		void Teleport(glm::vec3 translation);
-		void Translate(glm::vec3 translation);
+		void Teleport(glm::vec2 translation);
+		void Translate(glm::vec2 translation);
 		void Rotate(glm::float32 eulerAngle);
 		void Forward(unsigned int steps);
 		void Backward(unsigned int steps);
@@ -42,8 +40,8 @@ namespace np
 
 	protected:
 		//Protected methods:
-		void DrawLine(glm::vec3 a, glm::vec3 b);
-		glm::vec3 TranslateDirection(glm::vec3 direction, float steps);
+		void DrawLine(glm::vec2 a, glm::vec2 b);
+		glm::vec2 TranslateDirection(glm::vec2 direction, float steps);
 	};
 
 	constexpr float UP_EULER_ANGLES = 180.0f;
