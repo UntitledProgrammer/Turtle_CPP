@@ -12,31 +12,27 @@
 
 class Transform2D
 {
-protected:
-	glm::vec2 scale;
-
 public:
 	//Static memebers:
 	static constexpr glm::vec2 horizontal = glm::vec2(1, 0);
 	static constexpr glm::vec2 vertical = glm::vec2(0, 1);
 
 	//Attributes:
+	glm::vec2 scale;
 	glm::vec2 translation;
+	/// <summary>Rotation is messured in radians.</summary>
 	float rotation;
 
 	//Constructor:
 	Transform2D();
 
 	//Properties:
-	void SetRotation(float degrees) { rotation = glm::radians(degrees); }
-	void ApplyRotation(float degrees) { rotation += glm::radians(degrees); }
+	void SetRotation(float eulerAngles);
+	void AddRotation(float eulerAngle);
 
 	//Methods:
 	glm::mat3 GetMatrix();
-	glm::vec2 Up()
-	{
-		return glm::vec2(glm::cos(rotation), glm::sin(rotation));
-	}
+	glm::vec2 Up();
 };
 
 #endif // !TRANSFORM_H
